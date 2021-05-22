@@ -1,0 +1,20 @@
+version: "3.3"
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: sco_mysql
+    volumes:
+      - ./data/mysql:/var/lib/mysql:rw
+      - ./conf/custom-mysql.cnf:/etc/mysql/conf.d/mysql.cnf
+    ports:
+      - "3321:3306"
+    environment:
+      - MYSQL_DATABASE=sco
+      - MYSQL_ROOT_PASSWORD=root
+    networks:
+      - sco
+networks:
+  sco:
+    ipam:
+      config:
+        - subnet: 101.10.0.0/24
