@@ -9,8 +9,8 @@ use Illuminate\Http\JsonResponse;
 class AuthController extends Controller
 {
     const USERS = [
-        'user1' => ['username' => 'user1', 'password' => 'user1pass'],
-        'user2' => ['username' => 'user2', 'password' => 'user2pass']
+        'user1' => ['username' => 'user1', 'password' => 'password'],
+        'user2' => ['username' => 'user2', 'password' => 'password']
     ];
 
     /**
