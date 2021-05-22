@@ -22,15 +22,15 @@ class AuctionFactory extends Factory
      */
     public function definition()
     {
-        $openPrice = $this->faker->numberBetween(10, 100);
+        $openPrice = $this->faker->numberBetween(10, 1000);
 
         return [
             'title' => $this->faker->company,
             'description' => $this->faker->text,
             'open_price' => $openPrice,
             'last_price' => $openPrice,
-            'image' => sprintf('%s.jpg', $this->faker->numberBetween(1,20)),
-            'closed_at' => $this->faker->dateTimeBetween('+5 days','+1 year'),
+            'image' => sprintf('%s.jpg', $this->faker->numberBetween(1,5)),
+            'closed_at' => $this->faker->dateTimeBetween('+5 days','+1 month'),
         ];
     }
 }
