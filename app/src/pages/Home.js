@@ -65,7 +65,9 @@ export default function Home() {
                         {items.map(auction => (
                             <div className="col-sm-3" key={auction.id}>
                                 <div className="card mb-5">
-                                    <img src={auction.image_path} className="card-img-top" alt={auction.title} />
+                                    <Link to={`/detail/${auction.id}`}>
+                                        <img src={auction.image_path} className="card-img-top" alt={auction.title} />
+                                    </Link>
                                     <div className="card-body">
                                         <h4 className="card-price">Bid: ${auction.last_price}</h4>
                                         <h5 className="card-title">{auction.title}</h5>
