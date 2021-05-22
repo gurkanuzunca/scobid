@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Exceptions\NotFoundException;
 use App\Models\Auction;
 use App\Models\Setting;
 use Illuminate\Http\JsonResponse;
@@ -21,7 +20,7 @@ class AuctionController extends Controller
                 return $query->search($request->get('searchTerm'));
             })
             ->when($request->has('sort'), function ($query) use ($request) {
-                return $query->orderBy('open_price', $request->get('sort') === 'asc' ? 'asc' : 'desc');
+                return $query->orderBy('last_price', $request->get('sort') === 'asc' ? 'asc' : 'desc');
             })
             ->when(!$request->has('sort'), function ($query) use ($request) {
                 return $query->orderBy('id', 'DESC');
